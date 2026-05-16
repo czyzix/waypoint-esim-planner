@@ -11,7 +11,9 @@ export {
   type RecommendationRequest,
   type RecommendationResponseDto,
   type TravelerType,
-} from "@backend/dto/recommendation.dto";
+} from "@/lib/api-contract/recommendation.dto";
+
+import { apiUrl } from "@/lib/api-base";
 
 export type CountryOption = {
   code: string;
@@ -20,7 +22,7 @@ export type CountryOption = {
 };
 
 export async function fetchCountries(): Promise<CountryOption[]> {
-  const res = await fetch("/api/countries");
+  const res = await fetch(apiUrl("/api/countries"));
   if (!res.ok) {
     throw new Error(`Failed to load countries (${res.status})`);
   }
