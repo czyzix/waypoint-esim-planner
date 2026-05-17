@@ -11,7 +11,7 @@ export {
   type RecommendationRequest,
   type RecommendationResponseDto,
   type TravelerType,
-} from "@backend/dto/recommendation.dto";
+} from "@/lib/api-contract/recommendation.dto";
 
 export type CountryOption = {
   code: string;

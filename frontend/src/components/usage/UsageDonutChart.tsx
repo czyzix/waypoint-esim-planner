@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Label, Pie, PieChart } from "recharts";
-import type { ActivityKind } from "@backend/dto/recommendation.dto";
+import type { ActivityKind } from "@/lib/api-contract/recommendation.dto";
 import {
   ChartContainer,
   ChartTooltip,
