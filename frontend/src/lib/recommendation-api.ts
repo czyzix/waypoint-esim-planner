@@ -1,3 +1,5 @@
+import { apiUrl } from "@/lib/api-base";
+
 /**
  * API contract: same Zod schemas and inferred types as the backend DTO module.
  * Use `RecommendationRequestSchema` for client-side validation; use `RecommendationRequest`
@@ -20,7 +22,7 @@ export type CountryOption = {
 };
 
 export async function fetchCountries(): Promise<CountryOption[]> {
-  const res = await fetch("/api/countries");
+  const res = await fetch(apiUrl("/api/countries"));
   if (!res.ok) {
     throw new Error(`Failed to load countries (${res.status})`);
   }

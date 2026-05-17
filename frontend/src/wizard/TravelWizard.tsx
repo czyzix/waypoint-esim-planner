@@ -9,6 +9,7 @@ import {
   toRecommendationRequest,
 } from "@/lib/wizard-form-utils";
 import { hasAnyActivityHours, isStepValid } from "@/lib/wizard-validation";
+import { apiUrl } from "@/lib/api-base";
 import type { RecommendationResponseDto } from "@/lib/recommendation-api";
 import {
   WIZARD_FORM_DEFAULTS,
@@ -85,7 +86,7 @@ export function TravelWizard({ goHomeRef }: TravelWizardProps) {
     setResults({ status: "idle" });
 
     try {
-      const res = await fetch("/api/recommendation", {
+      const res = await fetch(apiUrl("/api/recommendation"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(toRecommendationRequest(form.getValues())),
