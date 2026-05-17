@@ -25,6 +25,13 @@ export function DeviceSelector() {
   const { control, setValue } = useFormContext<WizardFormValues>();
   const devicesNumber = useWatch({ control, name: "devicesNumber" });
 
+  const handleDevicesChange = (value: string) => {
+    setValue("devicesNumber", Number(value) as DevicesNumber, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+  };
+
   return (
     <div className="flex flex-col gap-2">
       <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-0.5">
@@ -42,12 +49,7 @@ export function DeviceSelector() {
       <RadioGroup
         aria-labelledby="devices-label"
         value={devicesNumber === "" ? "" : String(devicesNumber)}
-        onValueChange={(value) => {
-          setValue("devicesNumber", Number(value) as DevicesNumber, {
-            shouldValidate: true,
-            shouldDirty: true,
-          });
-        }}
+        onValueChange={handleDevicesChange}
         className="flex w-full flex-col gap-3"
       >
         {DEVICE_OPTIONS.map(({ value, title, detail }) => (

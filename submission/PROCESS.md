@@ -1,8 +1,20 @@
 # Radoslaw Czyzewski - Saily task PROCESS
 
-## Summary
+## Short Summary
 
+I must admit - I haven't felt so much joy during web development as i did duing this task. Working with AI agents really shifts your focus to thinking about product as a whole, becoming product builder who can implement features on both ends. My main specialization is frontend, but I tried to create a simple backend flow to step out of my comfort zone. 
 
+The AI agent was helping me at each step of the process - from creating an idea for an app, thorugh backend development, which still is a bit tricky for me but not so much like before task, and also improving my frontend and UI buidling flow, which I love. What is important is thath it helped me not only create a lot of code in short time (obviosuly), but also better understand the technical aspects of building an architecture, like picking stack, preparing database, creating main logic/flow.
+
+But with all that said, we had to rememebr that AI agents are only tools in our hands. We had to stay focused, keep learning new thinks and try do be better, because "with great power comes great responsibility". AI won't do everything perfectly. Below I listed my hot-takes from working with agent.
+
+### 🔥 HOT TAKES:
+
+- Automation in creating plans and architecutre for the project was never easier. The "Plan" mode is a great feature, and can be very helpful.
+- You can and you should learn during development process. Ssk questions everytime you are not sure, ask for graphs, tabels or antyhing that can help you understand the problem.
+- Generating page content has never been faster, but we should split it in chunks to make it easier to manage.
+- Avoid too long chats. To much context is an easy way for halucination in the model.
+- Don't try to do too much in one take, accept changes and then procced with another task. Be very specific about hwat you want to achieve.
 
 ## Creating Waypoint - Travel Connectivity Assistant
 
@@ -199,13 +211,17 @@ After creating each view I asked for a refactor. I was changing the model to Son
 
 > I want you to go through the ..... file. Check if we can apply any refactor to the logic so the code follow best practices in React, styling, and to make this code look cleaner. For now create only list with suggestions. If you are not sure about implementation aske me.
 
-Asking for refactors at the end of creating a view helped me avoid multiple small mistakes. But even with higher models, you should always review the changes. Sometimes modal don't find piece of code worth refactoring but your intuiotion tells you differenty. For example, inline handlers are not conisdered a bug, but (in my opinion) creating separate handlers can make code cleaner.
+Asking for refactors at the end of creating a view helped me avoid multiple small mistakes. But even with higher models, you should always review the changes. 
 
+📌 Sometimes model don't find piece of code worth refactoring but your intuition tells you differenty. For example, inline handlers are not conisdered a bug, but (in my opinion) creating separate handlers can make code cleaner.
 
+### 🧪 Test
 
+Since the main task was to show how we can develop a product with AI agents, I wanted to create simple frontend unit tests. In my current position I unfortunately don't write many test, but I've often heard that when agents write units tests, they are usually very good, and that this is one of the best things they can do.
 
+> I need you to write simple unit test on frontent. Dont over engineer it, just a simple tests to show in the how we can write them. If you are not sure about something in the implementation just ask.
 
-
+With this prompt and GPT-5.5 model usage-calculations.test.ts and wizard-validation.test.ts were created. Just a few simple test cases, and I must admit they look good for me. Don't really know what to say more.
 
 
 

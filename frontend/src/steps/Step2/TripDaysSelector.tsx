@@ -36,6 +36,13 @@ export function TripDaysSelector() {
     setTripDays(Math.min(MAX_TRIP_DAYS, Math.max(1, Math.trunc(n))));
   };
 
+  const handleCustomButtonClick = () => {
+    if (!isCustomTripDays) {
+      setTripDays(1);
+    }
+    customTripDaysRef.current?.focus();
+  };
+
   return (
     <div className="flex flex-col gap-2">
       <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-0.5">
@@ -70,12 +77,7 @@ export function TripDaysSelector() {
           size="sm"
           className="col-span-2 min-w-0 sm:col-span-1 sm:flex-1"
           aria-pressed={isCustomTripDays}
-          onClick={() => {
-            if (!isCustomTripDays) {
-              setTripDays(1);
-            }
-            customTripDaysRef.current?.focus();
-          }}
+          onClick={handleCustomButtonClick}
         >
           Other
         </Button>

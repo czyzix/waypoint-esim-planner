@@ -48,6 +48,13 @@ export function CountrySelector() {
     countryNameByCode,
   } = useCountries();
 
+  const handleCountriesChange = (value: string[]) => {
+    setValue("countries", value, {
+      shouldValidate: true,
+      shouldDirty: true,
+    });
+  };
+
   return (
     <div className="flex flex-col gap-2">
       <label
@@ -73,12 +80,7 @@ export function CountrySelector() {
           autoHighlight
           items={countryCodes}
           value={selectedCountries}
-          onValueChange={(value) => {
-            setValue("countries", value, {
-              shouldValidate: true,
-              shouldDirty: true,
-            });
-          }}
+          onValueChange={handleCountriesChange}
         >
           <ComboboxChips ref={anchor} id="countries" className="w-full max-md:gap-1.5">
             <ComboboxValue>

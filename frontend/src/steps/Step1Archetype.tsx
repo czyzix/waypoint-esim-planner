@@ -61,11 +61,15 @@ export function Step1Archetype() {
           <Controller
             name="travelerType"
             control={control}
-            render={({ field }) => (
+            render={({ field }) => {
+              const handleTravelerTypeChange = (value: string) =>
+                field.onChange(value as TravelerType);
+
+              return (
               <RadioGroup
                 aria-labelledby="traveler-type-label"
                 value={field.value}
-                onValueChange={(value) => field.onChange(value as TravelerType)}
+                onValueChange={handleTravelerTypeChange}
                 className="flex w-full flex-col gap-3"
               >
                 {ARCHETYPES.map(({ value, label, icon: Icon, description }) => (
@@ -95,7 +99,7 @@ export function Step1Archetype() {
                   </FieldLabel>
                 ))}
               </RadioGroup>
-            )}
+            )}}
           />
         </CardContent>
       </Card>
