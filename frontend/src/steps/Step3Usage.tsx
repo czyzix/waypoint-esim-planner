@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useFormContext, useWatch } from "react-hook-form";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { NumberInputWithSuffix } from "@/components/ui/number-input-with-suffix";
 import { Label } from "@/components/ui/label";
 import { UsageDonutChart } from "@/components/usage/UsageDonutChart";
 import { UsageEstimateInfoDialog } from "@/components/usage/UsageEstimateInfoDialog";
@@ -87,31 +87,23 @@ function UsageHourField({
           <Icon className="size-4 shrink-0" aria-hidden />
           {label}
         </Label>
-        <p className="mt-0.5 text-xs text-muted-foreground">{example}</p>
+        <p className="mt-0.5 text-sm text-muted-foreground md:text-xs">{example}</p>
       </div>
-      <div className="relative w-full shrink-0 sm:w-[6.5rem]">
-        <Input
-          id={name}
-          name={fieldName}
-          ref={ref}
-          type="number"
-          min={0}
-          max={MAX_ACTIVITY_HOURS_PER_DAY}
-          step={0.5}
-          inputMode="decimal"
-          placeholder="0"
-          value={hours}
-          onChange={onChange}
-          onBlur={onBlur}
-          className="w-full pr-11"
-        />
-        <span
-          className="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-sm text-muted-foreground"
-          aria-hidden
-        >
-          h/day
-        </span>
-      </div>
+      <NumberInputWithSuffix
+        containerClassName="w-full shrink-0 sm:w-[6.5rem]"
+        id={name}
+        name={fieldName}
+        ref={ref}
+        suffix="h/day"
+        min={0}
+        max={MAX_ACTIVITY_HOURS_PER_DAY}
+        step={0.5}
+        inputMode="decimal"
+        placeholder="0"
+        value={hours}
+        onChange={onChange}
+        onBlur={onBlur}
+      />
     </div>
   );
 }
@@ -124,8 +116,8 @@ export function Step3Usage() {
   return (
     <section className="text-left">
       <header className="mb-5 text-center">
-        <h2 className="text-xl font-semibold">Daily usage</h2>
-        <p className="mt-2 text-sm text-pretty text-muted-foreground">
+        <h2 className="text-2xl font-semibold md:text-xl">Daily usage</h2>
+        <p className="mt-2 text-base text-pretty text-muted-foreground md:text-sm">
           Set how much time you spend online each day. We&apos;ll estimate data
           for your whole trip.
         </p>
@@ -148,13 +140,13 @@ export function Step3Usage() {
 
             <div>
               <div className="mb-3 flex items-center justify-between gap-2">
-                <p className="text-sm font-medium">Trip usage estimate</p>
+                <p className="text-base font-medium md:text-sm">Trip usage estimate</p>
                 <UsageEstimateInfoDialog />
               </div>
               {summary ? (
                 <UsageDonutChart summary={summary} />
               ) : (
-                <p className="rounded-lg border border-dashed p-4 text-sm text-muted-foreground">
+                <p className="rounded-lg border border-dashed p-4 text-base text-muted-foreground md:text-sm">
                   Complete your trip details to see the usage estimate.
                 </p>
               )}

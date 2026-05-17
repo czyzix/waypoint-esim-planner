@@ -35,9 +35,9 @@ function ResultsStepHeader({
 }: ResultsStepHeaderProps) {
   return (
     <header className="mb-5 text-center">
-      <h2 className="text-xl font-semibold">{title}</h2>
+      <h2 className="text-2xl font-semibold md:text-xl">{title}</h2>
       <p
-        className="mt-2 text-sm text-pretty text-muted-foreground"
+        className="mt-2 text-base text-pretty text-muted-foreground md:text-sm"
         {...(isError ? { role: "alert" } : {})}
       >
         {description}

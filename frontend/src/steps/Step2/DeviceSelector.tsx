@@ -17,7 +17,7 @@ const DEVICE_OPTIONS: {
   detail: string;
 }[] = [
   { value: 1, title: "Only me", detail: "1 person" },
-  { value: 2, title: 'Me and my "partner in crime"', detail: "2 people" },
+  { value: 2, title: 'My "partner in crime"', detail: "2 people" },
   { value: 3, title: "The whole gang", detail: "3+ people" },
 ];
 
@@ -28,11 +28,14 @@ export function DeviceSelector() {
   return (
     <div className="flex flex-col gap-2">
       <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-0.5">
-        <Users className="row-span-2 size-4 shrink-0 text-current" aria-hidden />
-        <p id="devices-label" className="text-sm font-medium">
+        <Users
+          className="size-5 shrink-0 self-center text-current md:size-4"
+          aria-hidden
+        />
+        <p id="devices-label" className="text-base font-medium md:text-sm">
           Who&apos;s traveling with you?
         </p>
-        <p className="col-start-2 text-xs text-muted-foreground">
+        <p className="col-start-2 text-sm text-muted-foreground md:text-xs">
           Flying solo? Just pick &ldquo;Only me&rdquo;.
         </p>
       </div>

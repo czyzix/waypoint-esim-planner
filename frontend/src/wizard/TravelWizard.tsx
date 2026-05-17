@@ -4,7 +4,6 @@ import { Step1Archetype } from "@/steps/Step1Archetype";
 import { Step2Trip } from "@/steps/Step2/Step2Trip";
 import { Step3Usage } from "@/steps/Step3Usage";
 import { Step4Results } from "@/steps/Step4/Step4Results";
-import { apiUrl } from "@/lib/api-base";
 import {
   mergeWizardFormValues,
   toRecommendationRequest,
@@ -86,7 +85,7 @@ export function TravelWizard({ goHomeRef }: TravelWizardProps) {
     setResults({ status: "idle" });
 
     try {
-      const res = await fetch(apiUrl("/api/recommendation"), {
+      const res = await fetch("/api/recommendation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(toRecommendationRequest(form.getValues())),

@@ -3,7 +3,7 @@ import {
   type ActivityUsageBreakdownItem,
   type DevicesNumber,
   type TravelerType,
-} from "@/lib/api-contract/recommendation.dto";
+} from "@backend/dto/recommendation.dto";
 import { normalizeDevicesNumber } from "@/lib/wizard-validation";
 import type { WizardFormValues } from "@/types/wizard-form";
 

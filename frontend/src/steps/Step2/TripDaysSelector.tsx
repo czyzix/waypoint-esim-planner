@@ -2,8 +2,7 @@ import { CalendarDays } from "lucide-react";
 import { type ChangeEvent, useRef } from "react";
 import { useFormContext, useWatch } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { NumberInputWithSuffix } from "@/components/ui/number-input-with-suffix";
 import { formatTripDaysUnit } from "@/lib/wizard-form-utils";
 import { MAX_TRIP_DAYS } from "@/lib/wizard-validation";
 import type { WizardFormValues } from "@/types/wizard-form";
@@ -23,8 +22,8 @@ export function TripDaysSelector() {
     typeof tripDays === "number" &&
     !(TRIP_DAY_PRESETS as readonly number[]).includes(tripDays);
 
-  const tripDaysUnitLabel =
-    typeof tripDays === "number" ? formatTripDaysUnit(tripDays) : null;
+  const tripDaysSuffix =
+    typeof tripDays === "number" ? formatTripDaysUnit(tripDays) : "days";
 
   const handleTripDaysChange = (event: ChangeEvent<HTMLInputElement>) => {
     const raw = event.target.value;
@@ -41,13 +40,13 @@ export function TripDaysSelector() {
     <div className="flex flex-col gap-2">
       <div className="grid grid-cols-[auto_1fr] items-start gap-x-2 gap-y-0.5">
         <CalendarDays
-          className="row-span-2 size-4 shrink-0 text-current"
+          className="size-5 shrink-0 self-center text-current md:size-4"
           aria-hidden
         />
-        <p id="trip-days-label" className="text-sm font-medium">
+        <p id="trip-days-label" className="text-base font-medium md:text-sm">
           How many days is your trip?
         </p>
-        <p className="col-start-2 text-xs text-muted-foreground">
+        <p className="col-start-2 text-sm text-muted-foreground md:text-xs">
           Saily plans cover max {MAX_TRIP_DAYS} days
         </p>
       </div>
@@ -80,34 +79,20 @@ export function TripDaysSelector() {
         >
           Other
         </Button>
-        <div className="relative col-span-2 min-w-0 sm:col-span-1 sm:w-[8.5rem] sm:shrink-0 sm:flex-none">
-          <Input
-            ref={customTripDaysRef}
-            id="tripDays"
-            type="number"
-            min={1}
-            max={MAX_TRIP_DAYS}
-            step={1}
-            inputMode="numeric"
-            aria-labelledby="trip-days-label"
-            placeholder="0 days"
-            className={cn(
-              "w-full",
-              tripDaysUnitLabel === "day" && "pr-10",
-              tripDaysUnitLabel === "days" && "pr-12",
-            )}
-            value={tripDays === "" ? "" : tripDays}
-            onChange={handleTripDaysChange}
-          />
-          {tripDaysUnitLabel ? (
-            <span
-              className="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-sm text-muted-foreground"
-              aria-hidden
-            >
-              {tripDaysUnitLabel}
-            </span>
-          ) : null}
-        </div>
+        <NumberInputWithSuffix
+          ref={customTripDaysRef}
+          id="tripDays"
+          suffix={tripDaysSuffix}
+          min={1}
+          max={MAX_TRIP_DAYS}
+          step={1}
+          inputMode="numeric"
+          aria-labelledby="trip-days-label"
+          placeholder="0"
+          containerClassName="col-span-2 min-w-0 sm:col-span-1 sm:w-[8.5rem] sm:shrink-0 sm:flex-none"
+          value={tripDays === "" ? "" : tripDays}
+          onChange={handleTripDaysChange}
+        />
       </div>
     </div>
   );

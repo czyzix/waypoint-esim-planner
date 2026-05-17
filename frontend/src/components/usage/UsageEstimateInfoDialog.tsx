@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Info } from "lucide-react";
-import { SHARING_MULTIPLIER } from "@/lib/api-contract/recommendation.dto";
+import { SHARING_MULTIPLIER } from "@backend/dto/recommendation.dto";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,

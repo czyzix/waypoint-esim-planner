@@ -47,10 +47,10 @@ export function Step1Archetype() {
   return (
     <section className="text-left">
       <header className="mb-5 text-center">
-        <h2 id="traveler-type-label" className="text-xl font-semibold">
+        <h2 id="traveler-type-label" className="text-2xl font-semibold md:text-xl">
           Let&apos;s start your journey together!
         </h2>
-        <p className="mt-2 text-sm text-pretty text-muted-foreground">
+        <p className="mt-2 text-base text-pretty text-muted-foreground md:text-sm">
           Every trip begins with how you like to travel. Pick the style that
           feels most like you.
         </p>

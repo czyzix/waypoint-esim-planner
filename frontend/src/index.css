@@ -156,10 +156,10 @@
     @apply border-border outline-ring/50;
     }
   html {
-    @apply min-h-dvh bg-gradient-to-b from-white to-sky-100 font-sans;
+    @apply min-h-dvh bg-gradient-to-b from-white to-sky-200 font-sans;
     }
   body {
-    @apply mx-auto min-h-dvh w-full max-w-[600px] overflow-x-hidden text-foreground;
+    @apply mx-auto min-h-dvh w-full max-w-[600px] overflow-x-hidden text-lg text-foreground md:text-base;
     }
   #root {
     @apply h-full;
