@@ -66,8 +66,13 @@ export function Step4Results({ results, onRestart }: Step4ResultsProps) {
         <RecommendationPlanCard recommendation={results.data} />
       ) : null}
 
-      <div className="mt-6 flex justify-center">
-        <Button type="button" variant="outline" onClick={onRestart}>
+      <div className="mt-1.5">
+        <Button
+          type="button"
+          variant="outline"
+          className="w-full"
+          onClick={onRestart}
+        >
           Restart
         </Button>
       </div>
