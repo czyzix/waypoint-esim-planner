@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { AppHeader } from "@/components/layout/AppHeader";
-import { RecruitmentDisclaimerDialog } from "@/components/layout/RecruitmentDisclaimerDialog";
+import { RecruitmentDisclaimerDialog } from "@/components/layout/DisclaimerDialog";
 import { TravelWizard } from "@/wizard/TravelWizard";
 import { CountriesProvider } from "@/hooks/use-countries";
 

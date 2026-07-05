@@ -140,7 +140,7 @@ export function RecommendationPlanCard({
           />
         }
       >
-        See on Saily
+        CTA
       </Button>
     </div>
   );

@@ -22,10 +22,9 @@ export function RecruitmentDisclaimerDialog() {
         <DialogHeader>
           <DialogTitle>Demo project</DialogTitle>
           <DialogDescription className="text-pretty">
-            This site is a technical demonstration built for a recruitment
-            task. It is not a real product, does not sell eSIM plans, and is not
-            affiliated with or endorsed by the official Saily website or
-            service.
+          This is a personal side project built for learning and experimentation. 
+          To make the demo feel more realistic, it uses publicly available eSIM plans inspired by Saily's offer. 
+          This project is not affiliated with, endorsed by, or associated with Saily in any way.
           </DialogDescription>
         </DialogHeader>
         <div>
