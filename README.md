@@ -62,3 +62,7 @@ Visit **http://localhost:5173** in your browser. Keep both terminals running whi
 
 - **Frontend tests:** `cd frontend && npm test`
 - **Typecheck:** `npm run typecheck` in `backend` or `frontend`
+
+## Production (API)
+
+On the backend host set `CORS_ORIGIN` to your frontend URL (e.g. `https://waypoint-demo-pied.vercel.app`). See `backend/.env.example`.
